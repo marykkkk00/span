@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Слова — Español</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://rtilajwtdtyhonytynai.supabase.co">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.106.1" as="script">
+
+  <link rel="stylesheet" href="words.css">
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<div class="container">
+
+  <div class="top">
+
+    <a href="main.html" class="back">
+      ← назад
+    </a>
+
+    <h1>
+      Слова
+    </h1>
+    <button class="known-open-btn" onclick="openKnownModal()">изученные слова</button>
+  </div>
+
+  <div class="grid" id="words-list">
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+  </div>
+
+</div>
+
+<div class="modal" id="modal">
+
+  <div class="modal-content">
+
+    <div class="modal-top">
+
+      <h2 id="modal-title"></h2>
+
+      <button class="close-btn" onclick="closeModal()">
+        ✕
+      </button>
+
+    </div>
+
+    <div id="modal-words"></div>
+
+  </div>
+
+</div>
+
+<div class="known-modal" id="known-modal">
+
+  <div class="known-modal-content">
+
+    <div class="modal-top">
+
+      <h2>
+        Изученные слова
+      </h2>
+
+      <button
+        class="close-btn"
+        onclick="closeKnownModal()"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <button class="btn-repeat-known" onclick="openRepeatKnown()">
+      Повторить →
+    </button>
+
+    <select
+      id="known-category-select"
+      class="category-select"
+      onchange="renderKnownWords()"
+    >
+    </select>
+
+    <div id="known-words-list"></div>
+
+    <button class="btn-reset-category" onclick="resetCategory()">
+      Сбросить категорию
+    </button>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.106.1"></script>
+<script src="supabase.js"></script>
+<script src="words.js"></script>
+
+</body>
+</html>

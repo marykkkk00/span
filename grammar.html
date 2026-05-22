@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Грамматика</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://rtilajwtdtyhonytynai.supabase.co">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.106.1" as="script">
+
+<link rel="stylesheet" href="grammar.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="topbar">
+    <a class="back" href="main.html">← назад</a>
+    <div class="logo">GRAMMAR</div>
+  </div>
+
+  <div class="progress-summary" id="grammar-summary"></div>
+
+  <div class="grid" id="topics">
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+
+    <div class="modal-top">
+      <h2 id="modal-title"></h2>
+      <button class="close" onclick="closeModal()">✕</button>
+    </div>
+
+    <div id="rules"></div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.106.1"></script>
+<script src="supabase.js"></script>
+<script src="grammar.js"></script>
+
+</body>
+</html>

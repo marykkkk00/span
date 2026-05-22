@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"/>
+
+  <title>Тексты — Español</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://rtilajwtdtyhonytynai.supabase.co">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.106.1" as="script">
+  <link rel="stylesheet" href="text.css">
+
+
+
+</head>
+<body>
+
+<div class="container">
+
+  <div class="top">
+
+    <a href="main.html" class="back">
+      ← назад
+    </a>
+
+    <h1>
+      Тексты
+    </h1>
+
+  </div>
+
+  <div
+    class="grid"
+    id="texts-list"
+  >
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+    <div class="skeleton-card"></div>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="modal" id="text-modal">
+
+  <div class="modal-content">
+
+    <div class="modal-top">
+
+      <h2 id="text-modal-title"></h2>
+
+      <button
+        class="close-btn"
+        onclick="closeTextModal()"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <div class="text-wrapper">
+
+      <div
+        class="spanish-text"
+        id="spanish-text"
+      ></div>
+
+      <div class="text-divider"></div>
+
+      <div
+        class="translation-text"
+        id="translation-text"
+      ></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.106.1"></script>
+<script src="supabase.js"></script>
+<script src="text.js"></script>
+
+</body>
+</html>

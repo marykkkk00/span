@@ -1,0 +1,445 @@
+
+    :root {
+
+      --bg: #0B0B0B;
+      --text: #F5F3EE;
+      --muted: #B9B4AD;
+      --accent: #8B2635;
+
+      --line: rgba(245,243,238,0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+
+      background: var(--bg);
+
+      color: var(--text);
+
+      font-family:
+        "New Century Schoolbook",
+        "TeX Gyre Schola",
+        Georgia,
+        serif;
+
+      min-height: 100vh;
+
+      padding: 32px;
+
+      overflow-x: hidden;
+    }
+
+    .container {
+
+      max-width: 1200px;
+
+      margin: 0 auto;
+    }
+
+    /* TOP */
+
+    .top {
+
+      margin-bottom: 60px;
+    }
+
+    .back {
+
+      color: var(--muted);
+
+      text-decoration: none;
+
+      font-size: 0.95rem;
+
+      transition: color 0.2s ease;
+    }
+
+    .back:hover {
+
+      color: var(--accent);
+    }
+
+    h1 {
+
+      margin-top: 18px;
+
+      font-size: clamp(3rem, 8vw, 5.5rem);
+
+      font-weight: 400;
+
+      letter-spacing: -0.05em;
+
+      line-height: 0.95;
+    }
+
+    /* GRID */
+
+    .grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fill, minmax(280px, 1fr));
+
+      gap: 18px;
+    }
+
+    /* CARD */
+
+    .card {
+
+      position: relative;
+
+      border: 1px solid var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.02),
+          rgba(255,255,255,0.01)
+        );
+
+      padding: 28px;
+
+      min-height: 220px;
+
+      cursor: pointer;
+
+      overflow: hidden;
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+    }
+
+    .card::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 260px;
+      height: 260px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(139,38,53,0.18) 0%,
+          rgba(139,38,53,0) 70%
+        );
+
+      top: -120px;
+      right: -120px;
+
+      opacity: 0;
+
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+
+      transform: translateY(-6px);
+
+      border-color:
+        rgba(139,38,53,0.55);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(139,38,53,0.10),
+          rgba(255,255,255,0.02)
+        );
+    }
+
+    .card:hover::before {
+
+      opacity: 1;
+    }
+
+    .category {
+
+      color: var(--accent);
+
+      font-size: 0.82rem;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      margin-bottom: 24px;
+    }
+
+    .read-badge {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 0.7rem;
+      color: var(--accent);
+      border: 1px solid rgba(139,38,53,0.4);
+      border-radius: 4px;
+      padding: 1px 5px;
+      vertical-align: middle;
+    }
+
+    .word {
+
+      color: var(--text);
+
+      font-size: 2rem;
+
+      line-height: 1.1;
+
+      margin-bottom: 14px;
+    }
+
+    .translation {
+
+      color:
+        rgba(245,243,238,0.62);
+
+      line-height: 1.7;
+
+      font-size: 1rem;
+    }
+
+    /* MODAL */
+
+    .modal {
+
+      position: fixed;
+
+      inset: 0;
+
+      background:
+        rgba(0,0,0,0.76);
+
+      backdrop-filter: blur(8px);
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      padding: 20px;
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition: opacity 0.25s ease;
+
+      z-index: 999;
+    }
+
+    .modal.active {
+
+      opacity: 1;
+
+      pointer-events: all;
+    }
+
+    .modal-content {
+
+      width: min(950px, 100%);
+
+      max-height: 90vh;
+
+      overflow-y: auto;
+
+      border:
+        1px solid rgba(245,243,238,0.12);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(20,20,20,0.98),
+          rgba(12,12,12,0.98)
+        );
+
+      padding: 34px;
+
+      position: relative;
+    }
+
+    /* SCROLL */
+
+    .modal-content::-webkit-scrollbar {
+
+      width: 8px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+
+      background:
+        rgba(139,38,53,0.55);
+    }
+
+    /* TOP */
+
+    .modal-top {
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      margin-bottom: 34px;
+    }
+
+    #text-modal-title {
+
+      font-size: 2.2rem;
+
+      font-weight: 400;
+
+      letter-spacing: -0.04em;
+    }
+
+    .close-btn {
+
+      background: transparent;
+
+      border: none;
+
+      color: var(--muted);
+
+      font-size: 1.5rem;
+
+      cursor: pointer;
+
+      transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .close-btn:hover {
+
+      color: var(--accent);
+
+      transform: rotate(90deg);
+    }
+
+    /* TEXT */
+
+    .text-wrapper {
+
+      padding-top: 10px;
+    }
+
+    .spanish-text {
+
+      font-size: 1.15rem;
+
+      line-height: 2;
+
+      color: var(--text);
+
+      white-space: pre-wrap;
+    }
+
+    .text-divider {
+
+      width: 100%;
+
+      height: 1px;
+
+      background:
+        rgba(245,243,238,0.1);
+
+      margin:
+        40px 0;
+    }
+
+    .translation-text {
+
+      font-size: 1.05rem;
+
+      line-height: 2;
+
+      color:
+        rgba(245,243,238,0.62);
+
+      white-space: pre-wrap;
+    }
+
+    /* MOBILE */
+
+    /* SKELETON */
+
+    @keyframes shimmer {
+      0%   { background-position: -600px 0; }
+      100% { background-position:  600px 0; }
+    }
+
+    .skeleton-card {
+      border: 1px solid var(--line);
+      padding: 28px;
+      min-height: 220px;
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.02) 25%,
+        rgba(255,255,255,0.06) 50%,
+        rgba(255,255,255,0.02) 75%
+      );
+      background-size: 600px 100%;
+      animation: shimmer 1.4s infinite linear;
+    }
+
+    @media (max-width: 768px) {
+
+      body {
+
+        padding: 20px;
+      }
+
+      .top {
+
+        margin-bottom: 40px;
+      }
+
+      .grid {
+
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+
+        min-height: 180px;
+      }
+
+      .word {
+
+        font-size: 1.8rem;
+      }
+
+      .modal-content {
+
+        padding: 24px;
+      }
+
+      #text-modal-title {
+
+        font-size: 1.8rem;
+      }
+
+      .spanish-text {
+
+        font-size: 1rem;
+
+        line-height: 1.9;
+      }
+
+      .translation-text {
+
+        font-size: 0.95rem;
+
+        line-height: 1.9;
+      }
+
+    }
