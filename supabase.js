@@ -1,5 +1,5 @@
 const SUPABASE_URL = "https://rtilajwtdtyhonytynai.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_copPiLsNBSGD_v2Lj1cfLQ_yqmWDwEs";
+const SUPABASE_ANON_KEY = "";
 
 // В CDN v2 createClient обычно лежит в window.supabase
 const { createClient } = window.supabase;
